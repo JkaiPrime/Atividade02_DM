@@ -2,7 +2,7 @@ package com.example.lista02
 import android.content.Context
 import android.content.SharedPreferences
 
-class Auxiliar(private val context: Context) {
+class SharedPreference(private val context: Context) {
     private val sharedPreferences: SharedPreferences =
         context.getSharedPreferences("AnotacoesPrefs", Context.MODE_PRIVATE)
 

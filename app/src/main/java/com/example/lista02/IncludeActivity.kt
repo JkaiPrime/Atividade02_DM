@@ -1,14 +1,12 @@
 package com.example.lista02
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.lista02.databinding.ActivityIncludeBinding
-import com.example.lista02.Auxiliar
 
 class IncludeActivity : MainActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -56,7 +54,7 @@ class IncludeActivity : MainActivity() {
             if (binding.edtAnota.text.isEmpty()){
                 Toast.makeText(this, "Não pode incluir nada", Toast.LENGTH_SHORT).show()
             }else{
-                val aux = Auxiliar(this)
+                val aux = SharedPreference(this)
                 aux.adicionarAnotacao(binding.edtAnota.text.toString())
                 binding.edtAnota.text.clear()
                 Toast.makeText(this, "Incluido com sucesso", Toast.LENGTH_SHORT).show()

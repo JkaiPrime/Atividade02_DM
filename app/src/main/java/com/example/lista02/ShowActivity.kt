@@ -1,7 +1,6 @@
 package com.example.lista02
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
@@ -9,7 +8,6 @@ import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 
 class ShowActivity : MainActivity() {
@@ -52,9 +50,9 @@ class ShowActivity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show)
         setSupportActionBar(findViewById(R.id.toolbar))
-        val auxiliar = Auxiliar(this) // Substitua 'Auxiliar' pelo nome correto da sua classe
+        val sharedPreference = SharedPreference(this) // Substitua 'Auxiliar' pelo nome correto da sua classe
 
-        val text = auxiliar.recuperarAnotacoes()
+        val text = sharedPreference.recuperarAnotacoes()
         val linearLayout = findViewById<LinearLayout>(R.id.linearlayout)
 
         for (text in text) {
